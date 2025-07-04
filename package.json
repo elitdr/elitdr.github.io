@@ -1,10 +1,12 @@
 {
   "devDependencies": {
+    "husky": "^9.1.7",
     "vitepress": "^1.6.3"
   },
   "scripts": {
     "docs:dev": "vitepress dev",
     "docs:build": "vitepress build",
-    "docs:preview": "vitepress preview"
+    "docs:preview": "vitepress preview",
+    "prepare": "husky"
   }
 }
