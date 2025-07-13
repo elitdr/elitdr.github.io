@@ -1,5 +1,6 @@
 import js from "@eslint/js";
 import { defineConfig } from "eslint/config";
+import eslintConfigPrettier from "eslint-config-prettier/flat";
 import simpleImportSort from "eslint-plugin-simple-import-sort";
 import pluginVue from "eslint-plugin-vue";
 import globals from "globals";
@@ -30,4 +31,5 @@ export default defineConfig([
       "simple-import-sort/exports": "error",
     },
   },
+  eslintConfigPrettier, // 确保将其放在最后，以便有机会覆盖其他配置
 ]);
