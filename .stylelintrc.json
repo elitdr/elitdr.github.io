@@ -6,5 +6,6 @@
     "value-no-vendor-prefix": null,
     "media-feature-range-notation": "prefix",
     "selector-class-pattern": null
-  }
+  },
+  "plugins": ["stylelint-order"]
 }
