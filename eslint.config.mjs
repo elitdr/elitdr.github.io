@@ -27,7 +27,18 @@ export default defineConfig([
       "simple-import-sort": simpleImportSort,
     },
     rules: {
-      "simple-import-sort/imports": "error",
+      "simple-import-sort/imports": [
+        "error",
+        {
+          groups: [
+            ["^node:"], // Node.js 内置模块
+            ["^@?\\w"], // 第三方包（如 `react`、`lodash`）
+            ["^"], // 绝对路径（如 `src/components`）
+            ["^\\."], // 相对路径（如 `./utils`）
+            ["^\\u0000"], // 副作用导入（如 `import 'style.css'`）
+          ],
+        },
+      ],
       "simple-import-sort/exports": "error",
     },
   },
