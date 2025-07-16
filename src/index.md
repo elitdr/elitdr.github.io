@@ -9,7 +9,7 @@ hero:
   actions:
     - theme: brand
       text: 开始创建
-      link: /article/markdown-examples
+      link: /article/create-your-homepage/index
     - theme: alt
       text: 个人介绍
       link: /article/markdown-examples
