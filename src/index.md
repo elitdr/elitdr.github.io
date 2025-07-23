@@ -9,19 +9,22 @@ hero:
   actions:
     - theme: brand
       text: 开始创建
-      link: /article/create-your-homepage/
+      link: /article/create-your-own-personal-homepage/
     - theme: alt
-      text: 个人介绍
-      link: /article/markdown-examples
+      text: 个人简介
+      link: /personal-profile/
 
 features:
-  - title: 个人笔记
-    details: 会陆续整理为博客文章。
-    link: /article/markdown-examples
-  - title: 博客文章
+  - icon: ✏️
+    title: 笔记
+    details: 记录要点，整理思路。
+    link: /note/
+  - icon: 📖
+    title: 文章
     details: 总结经验，分享技术。
-    link: /article/markdown-examples
-  - title: 项目案例
-    details: 一些有趣的项目案例。
-    link: /article/markdown-examples
+    link: /article/
+  - icon: 💡
+    title: 项目
+    details: 实践运用，展示成果。
+    link: /project/
 ---

@@ -4,28 +4,21 @@ import { defineConfig } from "vitepress";
 export default defineConfig({
   srcDir: "src", // 源目录
   title: "elitdr 的个人主页",
-  description: "记笔记、写文章和分享案例",
+  description: "记笔记、写文章和分享项目",
   head: [["link", { rel: "icon", href: "/avatar.png" }]],
   themeConfig: {
     // https://vitepress.dev/reference/default-theme-config
     logo: "/avatar.png",
 
     nav: [
-      { text: "Home", link: "/" },
-      { text: "Examples", link: "/article/markdown-examples" },
-      { text: "代码规范", link: "/article/code-standard/husky" },
+      { text: "首页", link: "/" },
+      { text: "笔记", link: "/note/" },
+      { text: "文章", link: "/article/" },
+      { text: "项目", link: "/project/" },
     ],
 
     sidebar: {
-      "/": [
-        {
-          text: "Examples",
-          items: [
-            { text: "Markdown Examples", link: "/article/markdown-examples" },
-            { text: "Runtime API Examples", link: "/article/api-examples" },
-          ],
-        },
-      ],
+      "/": [],
       "/article/code-standard/": [
         {
           text: "代码规范",
