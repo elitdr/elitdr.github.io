@@ -1,4 +1,8 @@
 import { defineConfig } from "vitepress";
+import {
+  groupIconMdPlugin,
+  groupIconVitePlugin,
+} from "vitepress-plugin-group-icons";
 
 // https://vitepress.dev/reference/site-config
 export default defineConfig({
@@ -41,6 +45,14 @@ export default defineConfig({
     image: {
       lazyLoading: true, // 图片懒加载
     },
+    config(md) {
+      md.use(groupIconMdPlugin); // 图标插件
+    },
   },
   lastUpdated: true, // 最后更新时间
+  vite: {
+    plugins: [
+      groupIconVitePlugin(), // 图标插件
+    ],
+  },
 });
