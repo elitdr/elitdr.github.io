@@ -4,6 +4,7 @@ import DefaultTheme from "vitepress/theme";
 import { h } from "vue";
 
 import "./style.css";
+import "./custom.css";
 import "virtual:group-icons.css";
 
 export default {
