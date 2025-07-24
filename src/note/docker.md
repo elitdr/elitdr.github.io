@@ -6,7 +6,7 @@ outline: deep
 
 Docker 常用命令
 
-## 一、镜像
+## 镜像
 
 ### 拉取
 
@@ -16,7 +16,7 @@ docker pull <image>
 
 #### 参数
 
-|     参数     |       用法        |   描述   |
+|     参数     |       示例        |   说明   |
 | :----------: | :---------------: | :------: |
 | `--platform` | `--platform=<os>` | 指定架构 |
 
@@ -44,7 +44,7 @@ docker images
 docker rmi <image>
 ```
 
-## 二、容器
+## 容器
 
 ### 创建
 
@@ -54,7 +54,7 @@ docker run <image>
 
 #### 参数
 
-|    参数     |                 用法                 |        描述        |
+|    参数     |                 示例                 |        说明        |
 | :---------: | :----------------------------------: | :----------------: |
 |    `-d`     |                 `-d`                 |      后台运行      |
 |    `-p`     |       `-p <host>:<container>`        |      端口映射      |
@@ -73,7 +73,7 @@ docker exec [OPTIONS] <container> <command>
 
 #### 参数
 
-|  参数  |  用法  |   描述   |
+|  参数  |  示例  |   说明   |
 | :----: | :----: | :------: |
 | `--it` | `--it` | 交互模式 |
 
@@ -97,7 +97,7 @@ docker ps
 
 #### 参数
 
-| 参数 | 用法 |     描述     |
+| 参数 | 示例 |     说明     |
 | :--: | :--: | :----------: |
 | `-a` | `-a` | 查看所有容器 |
 
@@ -109,11 +109,11 @@ docker rm <container>
 
 #### 参数
 
-| 参数 |       用法       |   描述   |
+| 参数 |       示例       |   说明   |
 | :--: | :--------------: | :------: |
 | `-f` | `-f <container>` | 强制删除 |
 
-## 三、挂载卷
+## 挂载卷
 
 ### 创建
 
@@ -145,7 +145,7 @@ docker volume rm <volume>
 docker volume prune -a
 ```
 
-## 四、网络
+## 网络
 
 容器之间可以通过创建子网相互通信。
 
@@ -155,7 +155,7 @@ docker volume prune -a
 docker network create <network>
 ```
 
-## 五、日志
+## 日志
 
 ```sh
 docker logs <container>
@@ -163,11 +163,11 @@ docker logs <container>
 
 #### 参数
 
-| 参数 | 用法 |   描述   |
+| 参数 | 示例 |   说明   |
 | :--: | :--: | :------: |
 | `-f` | `-f` | 追踪日志 |
 
-## 六、Dockerfile
+## Dockerfile
 
 ### Dockerfile 基础模板
 
@@ -189,7 +189,7 @@ CMD <command>
 
 :::
 
-## 七、Docker Compose
+## Docker Compose
 
 Docker Compose 是用于批量管理容器的工具。
 
@@ -242,7 +242,7 @@ docker-compose up
 
 #### 参数
 
-|   参数    |   用法    |   描述   |
+|   参数    |   示例    |   说明   |
 | :-------: | :-------: | :------: |
 |   `-d`    |   `-d`    | 后台运行 |
 | `--build` | `--build` |   构建   |
