@@ -2,11 +2,11 @@
 outline: deep
 ---
 
-## Ubuntu
+# Ubuntu
 
-### 解压缩文件
+## 解压缩文件
 
-#### 解压文件命令
+### 解压命令
 
 ```sh
 tar -zxvf filename.tar.gz -C destination_folder
@@ -18,7 +18,7 @@ tar -zxvf filename.tar.gz -C destination_folder
 4. `-f` 表示指定文件名
 5. `-C` 表示指定解压目录
 
-### 压缩文件命令
+### 压缩命令
 
 ```sh
 tar -zcvf archive_name.tar.gz directory_name

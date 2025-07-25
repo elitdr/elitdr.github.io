@@ -6,8 +6,24 @@ outline: deep
 
 记录要点，整理思路。
 
-## [面试题](/note/interview)
+## 归档
 
-## [Docker](/note/docker)
+### [ncc](/note/ncc)
 
-## [Ubuntu](/note/ubuntu)
+### [Docker](/note/docker)
+
+### [Ubuntu](/note/ubuntu)
+
+## 待处理
+
+### [面试题](/note/interview)
+
+### pm2
+
+### storybook
+
+### jest
+
+### jsdoc
+
+### autoprefixer
