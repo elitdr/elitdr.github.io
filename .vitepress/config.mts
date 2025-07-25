@@ -22,7 +22,6 @@ export default defineConfig({
     ],
 
     sidebar: {
-      "/": [],
       "/article/code-standard/": [
         {
           text: "代码规范",
