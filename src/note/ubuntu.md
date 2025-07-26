@@ -1,7 +1,3 @@
----
-outline: deep
----
-
 # Ubuntu
 
 ## 解压缩文件

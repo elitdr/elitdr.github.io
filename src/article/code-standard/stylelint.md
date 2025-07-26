@@ -1,7 +1,3 @@
----
-outline: deep
----
-
 # Stylelint
 
 [Stylelint](https://github.com/stylelint/stylelint) 是一个用于检查和修复 JavaScript 代码错误的工具。

@@ -1,7 +1,3 @@
----
-outline: deep
----
-
 # Eslint
 
 [Eslint](https://github.com/eslint/eslint) 是一个用于检查和修复 JavaScript 代码错误的工具。

@@ -1,7 +1,3 @@
----
-outline: deep
----
-
 # lint-staged
 
 [lint-staged](https://github.com/lint-staged/lint-staged) 是一个用于筛选出 git 暂存区代码并执行命令的工具，可避免对整个项目执行命令影响性能（例如在 `pre-commit` 钩子中执行 Eslint、Stylelint、Prettier 等命令）。

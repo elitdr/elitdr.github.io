@@ -1,7 +1,3 @@
----
-outline: deep
----
-
 # commitlint
 
 [commitlint](https://github.com/conventional-changelog/commitlint) 是一个用于检查 `git commit` 提交消息是否规范的工具。

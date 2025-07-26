@@ -1,7 +1,3 @@
----
-outline: deep
----
-
 # Husky
 
 [Husky](https://github.com/typicode/husky) 是一个 Git Hooks 工具，用于管理 Git 的生命周期。

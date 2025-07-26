@@ -37,7 +37,12 @@ export default defineConfig({
       ],
     },
 
-    socialLinks: [{ icon: "github", link: "https://github.com/elitdr" }],
+    outline: {
+      level: [2, 3],
+      label: "页面导航",
+    },
+
+    socialLinks: [{ icon: "github", link: "https://github.com/elitdr" }], // 社交链接
   },
   markdown: {
     lineNumbers: true, // 显示行号

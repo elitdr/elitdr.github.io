@@ -1,7 +1,3 @@
----
-outline: deep
----
-
 # 创建属于你的个人主页
 
 本项目基于 VitePress 构建，发布至 GitHub Pages，仅适合开发者或动手能力强的朋友。

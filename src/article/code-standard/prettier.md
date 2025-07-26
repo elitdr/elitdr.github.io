@@ -1,7 +1,3 @@
----
-outline: deep
----
-
 # Prettier
 
 [Prettier](https://github.com/prettier/prettier) 是一个用于代码格式化的工具。

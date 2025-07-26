@@ -1,7 +1,3 @@
----
-outline: deep
----
-
 # ncc
 
 [ncc](https://github.com/vercel/ncc) 是由 Vercel 提供的命令行工具，可将 Node.js 项目及其全部依赖打包成一个单一的 JavaScript 文件，类似 gcc 编译语言的体验。它支持 TypeScript、ES 模块、动态 require、原生 Node 二进制模块等，并强调零配置使用。
