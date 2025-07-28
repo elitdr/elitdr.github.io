@@ -6,12 +6,12 @@
 
 我们使用以下工具来维护代码规范：
 
-- [Eslint](./eslint.md) - JavaScript/TypeScript 代码检查和修复工具
-- [Prettier](./prettier.md) - 代码格式化工具
-- [Stylelint](./stylelint.md) - CSS/SCSS 代码检查工具
-- [Husky](./husky.md) - Git Hooks 工具，用于在 Git 生命周期中执行脚本
-- [Commitlint](./commitlint.md) - Git 提交信息规范检查工具
-- [Lint-staged](./lint-staged.md) - 仅对 Git 暂存区文件执行检查和格式化
+- [Eslint](/article/code-standard/eslint) - JavaScript/TypeScript 代码检查和修复工具
+- [Prettier](/article/code-standard/prettier) - 代码格式化工具
+- [Stylelint](/article/code-standard/stylelint) - CSS/SCSS 代码检查工具
+- [Husky](/article/code-standard/husky) - Git Hooks 工具，用于在 Git 生命周期中执行脚本
+- [Commitlint](/article/code-standard/commitlint) - Git 提交信息规范检查工具
+- [Lint-staged](/article/code-standard/lint-staged) - 仅对 Git 暂存区文件执行检查和格式化
 
 ## 工作流程
 
@@ -20,16 +20,3 @@
 3. **提交信息规范**：通过 Commitlint 检查 Git 提交信息是否符合规范
 
 这套工具链能够帮助我们自动化地维护代码质量，减少代码审查中的格式问题讨论，让团队成员更专注于业务逻辑的实现。
-
-## 配置文件
-
-项目中相关的配置文件：
-
-- [eslint.config.mjs](../../..//eslint.config.mjs) - Eslint 配置文件
-- [.prettierrc](../../..//.prettierrc) - Prettier 配置文件
-- [.stylelintrc.json](../../..//.stylelintrc.json) - Stylelint 配置文件
-- [commitlint.config.mjs](../../..//commitlint.config.mjs) - Commitlint 配置文件
-- [.husky](../../..//.husky/) - Husky 配置目录
-- [.lintstagedrc](../../..//.lintstagedrc) - Lint-staged 配置文件
-
-详细配置和使用方法请参考各工具的具体文档。
