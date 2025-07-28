@@ -34,3 +34,28 @@ npm install -g @vercel/ncc
 | `--stats-out [file]`       | 输出 webpack 统计 JSON    | 生成打包统计结果 JSON 便于分析                 |
 | `--target [es]`            | 设置 ECMAScript 目标版本  | 控制输出 JS 的兼容性，默认 `es2015`            |
 | `-d, --debug`              | 显示调试日志              | 显示详细调试信息，有助于排查问题               |
+
+## 使用限制
+
+在使用 ncc 打包 Node.js 项目时，需要注意以下限制：
+
+### 1. 不能使用 `fs.readdirSync(__dirname)`
+
+由于 ncc 会将所有代码打包成单个文件，因此在运行时 `__dirname` 的行为会发生变化。在打包后的代码中，`__dirname` 将指向输出文件所在的目录，而不是原始源代码的目录，因此使用 `fs.readdirSync(__dirname)` 可能无法按预期工作。
+
+如果需要访问文件系统中的资源，建议使用以下替代方案：
+
+- 使用 `__dirname` 的相对路径，如 `path.join(__dirname, '../assets')`
+- 将资源作为模块导入，利用 webpack 的资源处理能力
+- 使用 `process.cwd()` 获取当前工作目录（但需注意运行时环境）
+
+### 2. 幽灵依赖问题
+
+ncc 依赖于项目的 package.json 来解析依赖关系。如果代码中直接使用了未在 dependencies 中声明的模块（即幽灵依赖），ncc 可能无法正确打包这些依赖，导致运行时错误。
+
+为避免此问题：
+
+- 定期检查并安装所有实际使用的依赖：`npm install <package-name>`
+- 使用工具如 `depcheck` 检测项目中的依赖使用情况
+- 确保所有使用的第三方库都正确添加到 dependencies 中
+- 注意区分 dependencies 和 devDependencies，确保运行时依赖正确声明

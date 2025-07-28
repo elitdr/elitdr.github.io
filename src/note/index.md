@@ -4,11 +4,11 @@
 
 ## [面试题](/note/interview)
 
+## [ncc](/note/ncc)
+
 ## [Next](/note/next)
 
 ## [Docker](/note/docker)
-
-## [ncc](/note/ncc)
 
 ## [Ubuntu](/note/ubuntu)
 
