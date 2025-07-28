@@ -4,6 +4,16 @@
 
 ## [面试题](/note/interview)
 
+## [JavaScript](/note/javascript)
+
+## [TypeScript](/note/typescript)
+
+## [Vue](/note/vue)
+
+## [React](/note/react)
+
+## [Redux](/note/redux)
+
 ## [dotenv](/note/dotenv/)
 
 ## [dotenv-cli](/note/dotenv-cli/)
