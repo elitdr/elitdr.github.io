@@ -18,11 +18,11 @@
 
 ## [Redux](/note/redux)
 
-## [dotenv](/note/dotenv/)
+## [dotenv](/note/dotenv)
 
-## [dotenv-cli](/note/dotenv-cli/)
+## [dotenv-cli](/note/dotenv-cli)
 
-## [cross-env](/note/cross-env/)
+## [cross-env](/note/cross-env)
 
 ## [ncc](/note/ncc)
 
