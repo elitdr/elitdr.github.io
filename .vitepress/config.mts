@@ -25,6 +25,7 @@ export default defineConfig({
       "/article/code-standard/": [
         {
           text: "代码规范",
+          link: "/article/code-standard/",
           items: [
             { text: "Husky", link: "/article/code-standard/husky" },
             { text: "commitlint", link: "/article/code-standard/commitlint" },
