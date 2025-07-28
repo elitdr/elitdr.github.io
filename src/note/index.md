@@ -2,24 +2,20 @@
 
 记录要点，整理思路。
 
-## 归档
+## [面试题](/note/interview)
 
-### [ncc](/note/ncc)
+## [Docker](/note/docker)
 
-### [Docker](/note/docker)
+## [ncc](/note/ncc)
 
-### [Ubuntu](/note/ubuntu)
+## [Ubuntu](/note/ubuntu)
 
-## 待处理
+## pm2
 
-### [面试题](/note/interview)
+## storybook
 
-### pm2
+## jest
 
-### storybook
+## jsdoc
 
-### jest
-
-### jsdoc
-
-### autoprefixer
+## autoprefixer
