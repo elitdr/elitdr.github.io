@@ -4,6 +4,8 @@
 
 ## [面试题](/note/interview)
 
+## [微信小程序](/note/weapp)
+
 ## [JavaScript](/note/javascript)
 
 ## [TypeScript](/note/typescript)
