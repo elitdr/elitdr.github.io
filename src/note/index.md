@@ -32,12 +32,24 @@
 
 ## [Ubuntu](/note/ubuntu)
 
-## pm2
+## 待处理
 
-## storybook
+### pm2
 
-## jest
+### storybook
 
-## jsdoc
+### jest
 
-## autoprefixer
+### jsdoc
+
+### autoprefixer
+
+### nodemon
+
+### sequelize
+
+### bcryptjs
+
+### jsonwebtoken
+
+### koa
