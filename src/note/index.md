@@ -2,54 +2,74 @@
 
 记录要点，整理思路。
 
-## [面试题](/note/interview)
+## 前端
 
-## [Mysql](/note/mysql)
+- [面试题](/note/front-end/interview)
 
-## [微信小程序](/note/weapp)
+- HTML
 
-## [JavaScript](/note/javascript)
+- CSS
 
-## [TypeScript](/note/typescript)
+- [JavaScript](/note/front-end/javascript)
 
-## [Vue](/note/vue)
+- [TypeScript](/note/front-end/typescript)
 
-## [React](/note/react)
+### 框架
 
-## [Redux](/note/redux)
+- [Vue](/note/front-end/vue/)
 
-## [dotenv](/note/dotenv)
+- [微信小程序](/note/front-end/mini-program/weapp)
 
-## [dotenv-cli](/note/dotenv-cli)
+### 工程化
 
-## [cross-env](/note/cross-env)
+- [ncc](/note/front-end/ncc)
 
-## [ncc](/note/ncc)
+- webpack
 
-## [Next](/note/next)
+- jsdoc
 
-## [Docker](/note/docker)
+- autoprefixer
 
-## [Ubuntu](/note/ubuntu)
+### 测试
 
-## 待处理
+- storybook
 
-### pm2
+- jest
 
-### storybook
+### 环境变量
 
-### jest
+- [dotenv](/note/front-end/environment/dotenv)
 
-### jsdoc
+- [dotenv-cli](/note/front-end/environment/dotenv-cli)
 
-### autoprefixer
+- [cross-env](/note/front-end/environment/cross-env)
 
-### nodemon
+## 后端
 
-### sequelize
+- [Docker](/note/back-end/docker)
 
-### bcryptjs
+- Nginx
 
-### jsonwebtoken
+- [Ubuntu](/note/back-end/ubuntu)
 
-### koa
+### 框架
+
+- Node
+
+- Koa
+
+### 工程化
+
+- nodemon
+
+- pm2
+
+- jsonwebtoken
+
+- bcryptjs
+
+- sequelize
+
+### 数据库
+
+- [Mysql](/note/back-end/mysql)
