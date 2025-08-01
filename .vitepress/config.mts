@@ -22,6 +22,19 @@ export default defineConfig({
     ],
 
     sidebar: {
+      "/note/front-end/react/": [
+        {
+          text: "React",
+          link: "/note/front-end/react/",
+          items: [
+            { text: "Redux", link: "/note/front-end/react/redux" },
+            {
+              text: "React Router",
+              link: "/note/front-end/react/react-router",
+            },
+          ],
+        },
+      ],
       "/article/code-standard/": [
         {
           text: "代码规范",
