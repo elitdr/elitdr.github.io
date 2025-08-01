@@ -1,4 +1,4 @@
-## [React 最佳实践](../react/components/bast-practice)
+## [React 最佳实践](/note/front-end/react/components/bast-practice)
 
 ### 组件设计原则
 

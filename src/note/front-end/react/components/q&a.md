@@ -1,4 +1,4 @@
-## [常见问题和解决方案](../react/components/Q&A)
+## [常见问题和解决方案](/note/front-end/react/components/q&a)
 
 ### 如何处理表单
 

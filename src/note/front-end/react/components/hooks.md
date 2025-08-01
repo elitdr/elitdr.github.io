@@ -1,4 +1,4 @@
-## [React Hooks](../react/components/hooks)
+## [React Hooks](/note/front-end/react/components/hooks)
 
 - `useState` 用于在函数组件中添加状态：
 
