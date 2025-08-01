@@ -10,7 +10,7 @@
 
 - CSS
 
-- [JavaScript](/note/front-end/javascript)
+- [JavaScript](/note/front-end/javascript/)
 
 - [TypeScript](/note/front-end/typescript)
 

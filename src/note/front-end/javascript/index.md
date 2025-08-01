@@ -73,3 +73,7 @@ js 中的任务被分为宏任务和微任务：
 - 微任务包括：then、catch、finally、async、await、MutationObserver 等
 
 执行顺序为：同步代码（本身也属于宏任务） -> 所有微任务 -> 渲染 -> 宏任务（往复循环）
+
+<!--@include: ./array/index.md-->
+
+<!--@include: ./object/index.md-->
