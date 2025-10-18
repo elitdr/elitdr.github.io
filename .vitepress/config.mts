@@ -13,14 +13,12 @@ export default defineConfig({
   themeConfig: {
     // https://vitepress.dev/reference/default-theme-config
     logo: "/avatar.png",
-
     nav: [
       { text: "首页", link: "/" },
       { text: "笔记", link: "/note/" },
       { text: "文章", link: "/article/" },
       { text: "项目", link: "/project/" },
     ],
-
     sidebar: {
       "/note/front-end/react/": [
         {
@@ -50,15 +48,27 @@ export default defineConfig({
         },
       ],
     },
-
     outline: {
       level: [2, 3],
       label: "页面导航",
     },
-
     socialLinks: [{ icon: "github", link: "https://github.com/elitdr" }], // 社交链接
+    lastUpdated: {
+      text: "最后更新于",
+      formatOptions: {
+        dateStyle: "short",
+        timeStyle: "short",
+      },
+    }, // 最后更新时间
   },
   markdown: {
+    container: {
+      tipLabel: "提示",
+      warningLabel: "警告",
+      dangerLabel: "危险",
+      infoLabel: "信息",
+      detailsLabel: "详细信息",
+    },
     lineNumbers: true, // 显示行号
     image: {
       lazyLoading: true, // 图片懒加载
@@ -67,7 +77,6 @@ export default defineConfig({
       md.use(groupIconMdPlugin); // 图标插件
     },
   },
-  lastUpdated: true, // 最后更新时间
   vite: {
     plugins: [
       groupIconVitePlugin(), // 图标插件

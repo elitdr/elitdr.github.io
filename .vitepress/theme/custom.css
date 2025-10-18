@@ -1,42 +1,5 @@
-/* 标题自动编号 */
-.vp-doc {
-  /* 初始化标题计数器 */
-  counter-reset: h2;
-}
-
-/* 二级标题 */
-.vp-doc h2 {
-  counter-reset: h3; /* 重置三级标题计数器 */
-}
-
-.vp-doc h2::before {
-  counter-increment: h2; /* 递增二级标题计数器 */
-  content: counter(h2) "."; /* 显示如 "1." */
-  margin-right: 1rem;
-  font-style: italic;
-}
-
-/* 三级标题 */
-.vp-doc h3 {
-  counter-reset: h4;
-}
-
-.vp-doc h3::before {
-  counter-increment: h3;
-  content: counter(h2) "." counter(h3) ".";
-  margin-right: 1rem;
-  font-style: italic;
-}
-
-/* h2 边框 */
-.vp-doc h2 {
-  border-top: none;
-  border-bottom: 1px solid var(--vp-c-divider);
-  padding-bottom: 8px;
-}
-
 /* 列表缩进 */
 .vp-doc ul,
 .vp-doc ol {
-  margin-left: 32px !important;
+  margin-left: 1rem !important;
 }
