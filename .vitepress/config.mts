@@ -13,6 +13,9 @@ export default defineConfig({
   themeConfig: {
     // https://vitepress.dev/reference/default-theme-config
     logo: "/avatar.png",
+    search: {
+      provider: "local",
+    },
     nav: [
       { text: "首页", link: "/" },
       { text: "笔记", link: "/note/" },
@@ -63,11 +66,11 @@ export default defineConfig({
   },
   markdown: {
     container: {
-      tipLabel: "提示",
-      warningLabel: "警告",
-      dangerLabel: "危险",
-      infoLabel: "信息",
-      detailsLabel: "详细信息",
+      tipLabel: "提示：",
+      warningLabel: "警告：",
+      dangerLabel: "危险：",
+      infoLabel: "信息：",
+      detailsLabel: "详情：",
     },
     lineNumbers: true, // 显示行号
     image: {
