@@ -1,5 +1,6 @@
-/* 列表缩进 */
+/* 列表样式 */
 .vp-doc ul,
 .vp-doc ol {
   margin-left: 1rem !important;
+  list-style-type: revert;
 }
