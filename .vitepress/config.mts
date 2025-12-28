@@ -17,36 +17,31 @@ export default defineConfig({
       provider: "local",
     },
     nav: [
-      { text: "首页", link: "/" },
       { text: "笔记", link: "/note/" },
       { text: "文章", link: "/article/" },
       { text: "项目", link: "/project/" },
     ],
     sidebar: {
-      "/note/front-end/react/": [
-        {
-          text: "React",
-          link: "/note/front-end/react/",
-          items: [
-            { text: "Redux", link: "/note/front-end/react/redux" },
-            {
-              text: "React Router",
-              link: "/note/front-end/react/react-router",
-            },
-          ],
-        },
-      ],
       "/article/code-standard/": [
         {
           text: "代码规范",
           link: "/article/code-standard/",
           items: [
-            { text: "Husky", link: "/article/code-standard/husky" },
-            { text: "commitlint", link: "/article/code-standard/commitlint" },
-            { text: "Prettier", link: "/article/code-standard/prettier" },
             { text: "Eslint", link: "/article/code-standard/eslint" },
-            { text: "Stylelint", link: "/article/code-standard/stylelint" },
-            { text: "lint-staged", link: "/article/code-standard/lint-staged" },
+            { text: "Prettier", link: "/article/code-standard/prettier" },
+            {
+              text: "Stylelint",
+              link: "/article/code-standard/stylelint",
+            },
+            { text: "Husky", link: "/article/code-standard/husky" },
+            {
+              text: "commitlint",
+              link: "/article/code-standard/commitlint",
+            },
+            {
+              text: "lint-staged",
+              link: "/article/code-standard/lint-staged",
+            },
           ],
         },
       ],
