@@ -12,6 +12,7 @@
 - [Husky](/article/code-standard/husky) - Git Hooks 工具，用于在 Git 生命周期中执行脚本
 - [Commitlint](/article/code-standard/commitlint) - Git 提交信息规范检查工具
 - [Lint-staged](/article/code-standard/lint-staged) - 仅对 Git 暂存区文件执行检查和格式化
+- [.vscode](/article/code-standard/vscode) - VSCode 配置
 
 ## 工作流程
 

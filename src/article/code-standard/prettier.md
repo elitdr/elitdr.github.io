@@ -1,6 +1,6 @@
 # Prettier
 
-[Prettier](https://github.com/prettier/prettier) 是一个用于代码格式化的工具。
+[Prettier](https://github.com/prettier/prettier) 是一个用于代码格式化的工具，它可以自动将代码格式化为一致的风格，提高代码的可读性和可维护性。
 
 ## 安装
 
@@ -20,15 +20,15 @@ node --eval "fs.writeFileSync('.prettierrc','{}\n')"
 
 ## 插件
 
-### prettier-plugin-tailwindcss（按需选择）
+### prettier-plugin-tailwindcss
 
-[prettier-plugin-tailwindcss](https://github.com/tailwindlabs/prettier-plugin-tailwindcss) 是一个用于格式化 Tailwind Css 的 Prettier 插件。
+[prettier-plugin-tailwindcss](https://github.com/tailwindlabs/prettier-plugin-tailwindcss) 是一个用于格式化 Tailwind Css 的 Prettier 插件，它可以自动将 Tailwind Css 类名排序并格式化，提高代码的可读性和可维护性。
 
 ```sh
 npm install -D prettier-plugin-tailwindcss
 ```
 
-在 `.prettierrc` 中添加如下配置。
+在 `.prettierrc` 文件中添加如下配置。
 
 ::: code-group
 
@@ -40,7 +40,3 @@ npm install -D prettier-plugin-tailwindcss
 ```
 
 :::
-
-## 集成到 Husky
-
-后续通过 [lint-staged](lint-staged) 集成到 Husky 中。

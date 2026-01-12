@@ -1,6 +1,6 @@
 # Eslint
 
-[Eslint](https://github.com/eslint/eslint) 是一个用于检查和修复 JavaScript 代码错误的工具。
+[Eslint](https://github.com/eslint/eslint) 是一个用于检查和修复 JavaScript 代码错误的工具，它可以帮助开发人员遵循一致的代码风格和最佳实践，提高代码质量和可维护性。
 
 ## 初始化
 
@@ -28,13 +28,13 @@ eslint, @eslint/js, globals, typescript-eslint, eslint-plugin-vue
 
 ### eslint-config-prettier
 
-使用 [eslint-config-prettier](https://github.com/prettier/eslint-config-prettier) 配置防止与 Prettier 规则冲突。
+[eslint-config-prettier](https://github.com/prettier/eslint-config-prettier) 是一个 Eslint 配置，用于防止与 Prettier 规则冲突。
 
 ```sh
 npm install -D eslint-config-prettier
 ```
 
-在 `eslint-config.mjs` 中添加如下配置。
+在 `eslint-config.mjs` 文件中添加如下配置。
 
 ::: code-group
 
@@ -43,6 +43,7 @@ npm install -D eslint-config-prettier
 import eslintConfigPrettier from "eslint-config-prettier/flat";
 
 export default [
+  {},
   // [!code ++]
   eslintConfigPrettier, // 确保将其放在最后，以便有机会覆盖其他配置
 ];
@@ -54,13 +55,13 @@ export default [
 
 ### eslint-plugin-simple-import-sort
 
-[eslint-plugin-simple-import-sort](https://github.com/lydell/eslint-plugin-simple-import-sort) 是一个用于自动排序导入导出的 Eslint 插件。
+[eslint-plugin-simple-import-sort](https://github.com/lydell/eslint-plugin-simple-import-sort) 是一个 Eslint 插件，用于自动排序导入导出语句。
 
 ```sh
 npm install -D eslint-plugin-simple-import-sort
 ```
 
-在 `eslint-config.mjs` 中添加如下配置。
+在 `eslint-config.mjs` 文件中添加如下配置。
 
 ::: code-group
 
@@ -69,7 +70,6 @@ npm install -D eslint-plugin-simple-import-sort
 import simpleImportSort from "eslint-plugin-simple-import-sort";
 
 export default [
-  // [!code ++]
   {
     // [!code ++]
     plugins: {
@@ -80,40 +80,13 @@ export default [
     // [!code ++]
     rules: {
       // [!code ++]
-      "simple-import-sort/imports": [
-        // [!code ++]
-        "error",
-        // [!code ++]
-        {
-          // [!code ++]
-          groups: [
-            // [!code ++]
-            ["^node:"], // Node.js 内置模块
-            // [!code ++]
-            ["^@?\\w"], // 第三方包（如 `react`、`lodash`）
-            // [!code ++]
-            ["^"], // 绝对路径（如 `src/components`）
-            // [!code ++]
-            ["^\\."], // 相对路径（如 `./utils`）
-            // [!code ++]
-            ["^\\u0000"], // 副作用导入（如 `import 'style.css'`）
-            // [!code ++]
-          ],
-          // [!code ++]
-        },
-        // [!code ++]
-      ],
+      "simple-import-sort/imports": "error",
       // [!code ++]
       "simple-import-sort/exports": "error",
       // [!code ++]
     },
-    // [!code ++]
   },
 ];
 ```
 
 :::
-
-## 集成到 Husky
-
-后续通过 [lint-staged](lint-staged) 集成到 Husky 中。

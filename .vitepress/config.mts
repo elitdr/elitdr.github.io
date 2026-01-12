@@ -42,6 +42,10 @@ export default defineConfig({
               text: "lint-staged",
               link: "/article/code-standard/lint-staged",
             },
+            {
+              text: "VSCode",
+              link: "/article/code-standard/vscode",
+            },
           ],
         },
       ],

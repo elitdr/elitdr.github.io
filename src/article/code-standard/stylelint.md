@@ -1,6 +1,6 @@
 # Stylelint
 
-[Stylelint](https://github.com/stylelint/stylelint) 是一个用于检查和修复 JavaScript 代码错误的工具。
+[Stylelint](https://github.com/stylelint/stylelint) 是一个用于检查和修复 Css 代码错误的工具。
 
 ## 初始化
 
@@ -10,7 +10,7 @@ npm init stylelint
 
 ## 配置
 
-在 `.stylelintrc.json` 中添加如下配置。
+在 `.stylelintrc.json` 文件中添加如下配置。
 
 ::: code-group
 
@@ -35,7 +35,7 @@ npm init stylelint
 
 :::
 
-#### stylelint-config-standard-scss（按需选择）
+#### stylelint-config-standard-scss
 
 使用 [stylelint-config-standard-scss](https://github.com/stylelint/stylelint-config-standard-scss) 官方配置。
 
@@ -43,7 +43,7 @@ npm init stylelint
 npm install -D stylelint-config-standard-scss
 ```
 
-在 `.stylelintrc.json` 中添加如下配置。
+在 `.stylelintrc.json` 文件中添加如下配置。
 
 ::: code-group
 
@@ -60,13 +60,13 @@ npm install -D stylelint-config-standard-scss
 
 ### stylelint-order
 
-[stylelint-order](https://github.com/hudochenkov/stylelint-order) 是一个用于自动排序 Css 的 Stylelint 插件。
+[stylelint-order](https://github.com/hudochenkov/stylelint-order) 是一个用于自动排序 Css 属性的 Stylelint 插件。
 
 ```sh
 npm install -D stylelint-order
 ```
 
-在 `.stylelintrc.json` 中添加如下配置。
+在 `.stylelintrc.json` 文件中添加如下配置。
 
 ::: code-group
 
@@ -82,7 +82,3 @@ npm install -D stylelint-order
 ```
 
 :::
-
-## 集成到 Husky
-
-后续通过 [lint-staged](lint-staged) 集成到 Husky 中。
