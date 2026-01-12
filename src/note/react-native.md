@@ -4,67 +4,23 @@
 
 > 记录于 2025 年 12 月 18 日，设备为安装 macOS Sonoma 14.7.8 系统 Inter + ADM 显卡的黑苹果，React Native 版本为 0.83，Xcode 版本为 16.2，Android Studio 版本为 2025.2.2。{#current-environment}
 
-## 运行 iOS 项目时遇到的问题
-
-由于 MacOS 自带的 Ruby 版本老旧，且缺少开发头文件。
-
-在创建项目的时候会提示是否安装 CocoaPods，选择安装会导致报错（原因如上所述，建议选择否后续手动处理），但是项目可以正常初始化。
-
-**第一步：安装 Ruby**
-
-建议使用 rbenv 安装一个较新的 Ruby 版本。
-
-```sh
-brew install rbenv ruby-build
-echo 'export PATH="$HOME/.rbenv/bin:$PATH"' >> ~/.zshrc
-echo 'eval "$(rbenv init -)"' >> ~/.zshrc
-source ~/.zshrc
-rbenv install 3.2.2
-rbenv global 3.2.2
-```
-
-**第二步：安装 CocoaPods**
-
-建议使用 brew 安装 CocoaPods。
-
-```sh
-brew install cocoapods
-```
-
-**第三步：安装依赖**
-
-重新安装 iOS 项目需要的依赖，确保代理能够稳定访问（需要下载大量依赖），完成后即可正常启动项目。
-
-1. `cd ios` 导航到项目根目录下的 ios 文件夹。
-2. `bundle install` 安装 Bundler。
-3. `bundle exec pod install` 安装由 CocoaPods 管理的 iOS 依赖项。
-
-## 运行 Android 项目时遇到的问题
-
-经过测试，在[当前环境](#current-environment)下只能使用版本为 Android 11 及以下的 Android Studio 虚拟机。
-
-::: warning 注意：
-React Native 中文网没有列出设置 JAVA_HOME 的步骤，需将以下命令添加到 ~/.zshrc 文件中。
-
-`export JAVA_HOME=/Library/Java/JavaVirtualMachines/zulu-17.jdk/Contents/Home`
-:::
-
-执行 `npx react-native doctor` 命令可以检查环境是否配置正确。
-
-关于以下问题，React Native 中英文网都没有提到如何处理。
-
-```sh
- ✖ Android SDK - Required for building and installing your app on Android
-   - Versions found: N/A
-```
-
-经过测试，发现需要安装 **SDK Tools > Android SDK Command-line Tools** 工具，网上提到建议安装旧版本，并且需要配置环境变量，但是在[当前环境](#current-environment)下使用当前最新版 **Android SDK Command-line Tools 19.0**，没有配置环境变量也可正常启动项目，前提是严格按照 React Native 英文网配置。
-
-至此，iOS 和 Android 项目均可以正常启动了。
-
 ## 布局
 
 在 React Native 中， View 使用弹性盒模型（Flexbox）来为子元素布局。
+
+### View
+
+仅用于布局。
+
+### Text
+
+仅用于显示文本。
+
+### Touchable 和 Pressable
+
+仅用于处理触摸事件。
+
+`Touchable` 组件是 React Native 中用于处理触摸事件的基础组件，而 `Pressable` 是一个更高级的组件，它在 `Touchable` 的基础上添加了一些额外的功能，比如处理按下和释放事件、添加涟漪效果等。
 
 ## 平台
 
@@ -164,7 +120,7 @@ React Native 会根据运行平台的不同自动引入正确对应的组件。
 
 ## 样式
 
-建议使用 `StyleSheet.create` 来集中定义组件的样式。比如像下面这样：
+样式无法继承，建议使用 `StyleSheet.create` 来集中定义组件的样式。比如像下面这样：
 
 ```jsx
 import React from "react";
@@ -202,7 +158,13 @@ export default LotsOfStyles;
 
 React Native 中的尺寸都是无单位的，表示的是与设备像素密度无关的逻辑像素点。
 
-## Flexbox 布局
+获取屏幕宽度和高度
+
+```tsx
+const { width, height } = useWindowDimensions();
+```
+
+## Flexbox
 
 React Native 中的 Flexbox 的工作原理和 web 上的 CSS 基本一致，当然也存在少许差异。首先是默认值不同：flexDirection 的默认值为 column（而不是 row），alignContent 默认值为 flex-start（而不是 stretch）, flexShrink 默认值为0 （而不是1）, 而 flex 只能指定一个数字值。
 
@@ -216,14 +178,186 @@ React Native 中的 Flexbox 的工作原理和 web 上的 CSS 基本一致，当
 
 `flexShrink` 接受大于等于 0 的任意浮点数值，默认值为 0（在 Web 上，默认值为 1）。容器将按照各个子项的 flex shrink 值加权收缩它们。
 
+## Transform
+
+`transform` 接受一个转换对象数组或以空格分隔的字符串值。每个对象指定要转换的属性作为键，并在转换中使用相应的值。对象不能合并。每个对象只能使用一个键值对。
+
+```tsx
+{
+  transform: [{rotateX: '45deg'}, {rotateZ: '0.785398rad'}],
+  transform: 'rotateX(45deg) rotateZ(0.785398rad)',
+}
+```
+
 ## 环境变量
 
 使用 `react-native-config` 来管理环境变量。
 
-## 模块别名（绝对路径）
+要在 iOS 构建设置和 Info.plist 中可用（例如配置应用名称），请仔细查阅[官方文档](https://github.com/react-native-config/react-native-config?tab=readme-ov-file#availability-in-build-settings-and-infoplist)。
 
-使用 `babel-plugin-module-resolver` 来配置模块别名。
+Android 需额外配置一个步骤才能使用，请仔细查阅[官方文档](https://github.com/react-native-config/react-native-config?tab=readme-ov-file#extra-step-for-android)
+
+### 应用名称
+
+iOS 在 **ios > [项目名] > Info.plist** 文件中配置应用名称
+
+```xml
+	<key>CFBundleDisplayName</key>
+	<string>$(APP_NAME)</string>
+```
+
+Android 在 **android > app > main > res > values > strings.xml** 文件中配置应用名称
+
+```xml
+  <string name="app_name">@string/APP_NAME</string>
+```
+
+### 图标
+
+使用[在线工具](https://makeappicon.com)来生成应用图标。
+
+iOS 在 **ios > [项目名] > Images.xcassets > AppIcon.appiconset** 文件中配置图标
+
+Android 在 **android > app > main > res** 文件中配置图标
+
+### 版本号
+
+iOS 在 **ios > [项目名] > Info.plist** 文件中配置版本号
+
+```xml
+	<key>CFBundleShortVersionString</key>
+	<string>$(APP_VERSION)</string>
+	<key>CFBundleVersion</key>
+	<string>$(APP_BUNDLE_CODE)</string>
+```
+
+Android 在 **android > app > build.gradle** 文件中配置版本号
+
+```java
+{
+  versionCode project.env.get("APP_BUNDLE_CODE").toInteger()
+  versionName project.env.get("APP_VERSION")
+}
+```
+
+## 绝对路径（模块别名）
+
+::: code-group
+
+```json [tsconfig.json]
+{
+  "compilerOptions": {
+    "baseUrl": ".",
+    "paths": {
+      "@/assets/*": ["src/assets/*"],
+      "@/components/*": ["src/components/*"],
+      "@/constants/*": ["src/constants/*"],
+      "@/hooks/*": ["src/hooks/*"],
+      "@/navigation/*": ["src/navigation/*"],
+      "@/screens/*": ["src/screens/*"],
+      "@/services/*": ["src/services/*"],
+      "@/store/*": ["src/store/*"],
+      "@/types/*": ["src/types/*"],
+      "@/utils/*": ["src/utils/*"]
+    }
+  }
+}
+```
+
+使用 `babel-plugin-module-resolver` 来配置 babel 模块别名。
+
+:::
+::: code-group
+
+```js [babel.config.js]
+{
+  "plugins": [
+    [
+      "module-resolver",
+      {
+        "root": ["./src"],
+        "alias": {
+          "@components": "./src/components",
+          "@screens": "./src/screens",
+          "@utils": "./src/utils",
+          "@assets": "./src/assets",
+          "@types": "./src/types",
+          "@constants": "./src/constants",
+          "@navigators": "./src/navigators",
+          "@contexts": "./src/contexts",
+          "@hooks": "./src/hooks",
+          "@services": "./src/services",
+          "@store": "./src/store",
+          "@styles": "./src/styles"
+        }
+      }
+    ]
+  ]
+}
+```
+
+:::
 
 ## 导航器
 
 使用 `react-navigation` 来管理导航器。
+
+## 状态管理
+
+## 运行 iOS 项目时遇到的问题
+
+由于 MacOS 自带的 Ruby 版本老旧，且缺少开发头文件。
+
+在创建项目的时候会提示是否安装 CocoaPods，选择安装会导致报错（原因如上所述，建议选择否后续手动处理），但是项目可以正常初始化。
+
+**第一步：安装 Ruby**
+
+建议使用 rbenv 安装一个较新的 Ruby 版本。
+
+```sh
+brew install rbenv ruby-build
+echo 'export PATH="$HOME/.rbenv/bin:$PATH"' >> ~/.zshrc
+echo 'eval "$(rbenv init -)"' >> ~/.zshrc
+source ~/.zshrc
+rbenv install 3.2.2
+rbenv global 3.2.2
+```
+
+**第二步：安装 CocoaPods**
+
+建议使用 brew 安装 CocoaPods。
+
+```sh
+brew install cocoapods
+```
+
+**第三步：安装依赖**
+
+重新安装 iOS 项目需要的依赖，确保代理能够稳定访问（需要下载大量依赖），完成后即可正常启动项目。
+
+1. `cd ios` 导航到项目根目录下的 ios 文件夹。
+2. `bundle install` 安装 Bundler。
+3. `bundle exec pod install` 安装由 CocoaPods 管理的 iOS 依赖项。
+
+## 运行 Android 项目时遇到的问题
+
+经过测试，在[当前环境](#current-environment)下只能使用版本为 Android 11 及以下的 Android Studio 虚拟机。
+
+::: warning 注意：
+React Native 中文网没有列出设置 JAVA_HOME 的步骤，需将以下命令添加到 ~/.zshrc 文件中。
+
+`export JAVA_HOME=/Library/Java/JavaVirtualMachines/zulu-17.jdk/Contents/Home`
+:::
+
+执行 `npx react-native doctor` 命令可以检查环境是否配置正确。
+
+关于以下问题，React Native 中英文网都没有提到如何处理。
+
+```sh
+ ✖ Android SDK - Required for building and installing your app on Android
+   - Versions found: N/A
+```
+
+经过测试，发现需要安装 **SDK Tools > Android SDK Command-line Tools** 工具，网上提到建议安装旧版本，并且需要配置环境变量，但是在[当前环境](#current-environment)下使用当前最新版 **Android SDK Command-line Tools 19.0**，没有配置环境变量也可正常启动项目，前提是严格按照 React Native 英文网配置。
+
+至此，iOS 和 Android 项目均可以正常启动了。
